@@ -1,0 +1,17 @@
+metadata:
+  name: "Check LABEL exists"
+  guidelines: "Check LABEL exists" 
+  category: "general" 
+  id: "CUSTOM_DOCKER_1"
+  severity: low
+scope:
+  provider: "docker" 
+definition:
+  cond_type: attribute
+  resource_types:
+    - LABEL
+  attribute: value
+  operator: starting_with
+  value: foo=
+  
+  

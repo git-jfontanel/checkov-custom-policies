@@ -1,0 +1,24 @@
+metadata:
+  name: "Check LABEL exists with specific values"
+  guidelines: "Check LABEL exists " 
+  category: "general" 
+  id: "CUSTOM_DOCKER_3"
+  severity: low
+scope:
+  provider: "docker" 
+definition:
+  or:
+    - cond_type: attribute
+      resource_types:
+        - LABEL
+      attribute: value
+      operator: starting_with
+      value: foo=
+    - cond_type: attribute
+      resource_types:
+        - LABEL
+      attribute: value
+      operator: starting_with
+      value: foo2=
+  
+  
